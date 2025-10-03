@@ -18,4 +18,9 @@ class Client extends Model
         'contract_value',
     ];
 
+    public function address()
+    {
+        return $this->hasOne(Address::class);
+    }
+
 }

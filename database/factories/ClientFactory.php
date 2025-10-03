@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Address;
+use App\Models\Client;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -23,5 +25,12 @@ class ClientFactory extends Factory
             'observation' => $this->faker->optional()->paragraphs(2, true),
             'contract_value' => $this->faker->randomFloat(2, 1000, 100000),
         ];
+    }
+
+    public function withAddress(): static
+    {
+        return $this->afterCreating(function (Client $client) {
+            Address::factory()->create(['client_id' => $client->id]);
+        });
     }
 }

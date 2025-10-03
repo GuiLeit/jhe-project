@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        Client::factory(20)->create();
+        Client::factory(10)->withAddress()->create();
     }
 }
