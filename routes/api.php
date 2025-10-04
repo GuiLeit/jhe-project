@@ -1,5 +1,11 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\ClientController;
+use App\Http\Middleware\ForceJsonResponse;
 use Illuminate\Support\Facades\Route;
 
+Route::middleware(ForceJsonResponse::class)->group(function () {
+
+    Route::get('/clients', [ClientController::class, 'index']);
+
+});
