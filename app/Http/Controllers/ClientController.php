@@ -23,7 +23,31 @@ class ClientController extends Controller
      */
     public function store(StoreClientRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        try {
+
+            $client = DB::transaction(function () use ($validated) {
+                $client = Client::create([
+                    'name' => $validated['name'],
+                    'email' => $validated['email'],
+                    'cnpj' => $validated['cnpj'],
+                    'observation' => $validated['observation'] ?? null,
+                    'contract_value' => $validated['contract_value'],
+                ]);
+
+                $client->address()->create($validated['address']);
+                return $client->load('address');
+            });
+
+            return response()->json($client, 201);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Failed to create client',
+                'message' => $e->getMessage()
+            ], 500);
+        }
     }
 
     /**
