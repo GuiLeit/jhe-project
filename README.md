@@ -83,8 +83,7 @@ A aplicação estará disponível em: `http://localhost:8000`
 ```
 
 ### Coleção Postman para testes
-
-[Visualizar Coleção Postman para testes]([https://cloudy-capsule-729676.postman.co/workspace/My-Workspace~a2625005-5a3b-4c5f-8b95-8de63b2d0b30/collection/26099050-9bc634ce-2a8d-4b01-9c1a-751e2a7d9d8a?action=share&creator=26099050](https://www.postman.com/cloudy-capsule-729676/workspace/guilherme-leite/collection/26099050-9bc634ce-2a8d-4b01-9c1a-751e2a7d9d8a?action=share&creator=26099050))
+[Visualizar Coleção Postman para testes](https://www.postman.com/cloudy-capsule-729676/workspace/guilherme-leite/collection/26099050-9bc634ce-2a8d-4b01-9c1a-751e2a7d9d8a?action=share&creator=26099050)
 
 ### Exemplos cURL
 
